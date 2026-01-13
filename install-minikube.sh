@@ -65,3 +65,6 @@ echo "1. Log out and log back in OR run: newgrp docker"
 echo "2. Start Minikube using:"
 echo "   minikube start --driver=docker"
 echo "=============================="
+
+
+#newgrp docker

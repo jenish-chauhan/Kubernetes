@@ -1,0 +1,14 @@
+for the access from the browser we need to forward port 
+
+command =   sudo -E kubectl port-forward service/apache-service -n apache 82:80 --a
+            ddress=0.0.0.0
+
+also rememeber that you need to enable 82 port on your instance SG group 
+
+manually scale replicas = "kubectl scale deployment apache-deployment -n apache --replicas=3"
+
+create hpa and apply in
+
+create an load generator = kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
+
+run this command inside this this sh = "while true; do wget -q -O- http://apache-service.apache.svc.cluster.local; done"
