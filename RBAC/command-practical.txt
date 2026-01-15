@@ -1,0 +1,19 @@
+//first you have to know who you are
+command = kubectl auth whoami
+
+can i get pods ??
+command = kubectl auth can-i get pods 
+//delete = kubectl auth can-i delete pods
+
+kubectl auth can-i get pods --as=apache-user -n apache
+
+Core RBAC Resources (Very Important)
+
+There are ONLY 4 RBAC resources you must remember:
+
+Resource	        Scope	        Purpose
+===================================================
+Role	            Namespace	    Defines permissions in ONE namespace
+ClusterRole	        Cluster-wide	Defines permissions across ALL namespaces
+RoleBinding     	Namespace	    Binds Role → User/SA
+ClusterRoleBinding	Cluster-wide	Binds ClusterRole → User/SA
