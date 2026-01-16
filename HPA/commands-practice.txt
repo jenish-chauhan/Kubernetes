@@ -9,6 +9,6 @@ manually scale replicas = "kubectl scale deployment apache-deployment -n apache 
 
 create hpa and apply in
 
-create an load generator = kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh
+create an load generator = " kubectl run -i --tty load-generator --image=busybox -n apache /bin/sh "
 
 run this command inside this this sh = "while true; do wget -q -O- http://apache-service.apache.svc.cluster.local; done"
