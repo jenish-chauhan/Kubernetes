@@ -1,0 +1,15 @@
+after creating an cluster on the EKS you need to create an kubeconfig file to access the cluster
+
+```
+aws eks --region us-east-1 update-kubeconfig --name my-cluster
+```
+
+
+this command will create a kubeconfig file in the ~/.kube/config file. you can use this file to access the cluster using kubectl command.
+
+to verify the cluster access you can run the following command
+
+```bash
+kubectl get nodes
+
+ps aux | grep kubelet
